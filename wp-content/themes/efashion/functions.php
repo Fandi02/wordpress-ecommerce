@@ -180,6 +180,102 @@ endif;
 
 add_action( 'init', 'twentytwentyfour_block_stylesheets' );
 
+function external_style() {
+	wp_enqueue_style(
+        'bootstrap-style',
+        get_parent_theme_file_uri('assets/css/bootstrap.min.css'),
+        array(), // Dependencies
+        null // Version
+    );
+
+    wp_enqueue_style(
+        'external-style-1',
+        get_parent_theme_file_uri('assets/css/style-external.css'),
+        array(), // Dependencies
+        null // Version
+    );
+
+	wp_enqueue_style(
+        'external-style-2',
+        get_parent_theme_file_uri('assets/css/font-awesome.min.css'),
+        array(), // Dependencies
+        null // Version
+    );
+
+	wp_enqueue_style(
+        'external-style-3',
+        get_parent_theme_file_uri('assets/css/elegant-icons.css'),
+        array(), // Dependencies
+        null // Version
+    );
+
+	wp_enqueue_style(
+        'external-style-4',
+        get_parent_theme_file_uri('assets/css/magnific-popup.css'),
+        array(), // Dependencies
+        null // Version
+    );
+
+	wp_enqueue_style(
+        'external-style-5',
+        get_parent_theme_file_uri('assets/css/nice-select.css'),
+        array(), // Dependencies
+        null // Version
+    );
+
+	wp_enqueue_style(
+        'external-style-6',
+        get_parent_theme_file_uri('assets/css/owl.carousel.min.css'),
+        array(), // Dependencies
+        null // Version
+    );
+
+	wp_enqueue_style(
+        'external-style-7',
+        get_parent_theme_file_uri('assets/css/slicknav.min.css'),
+        array(), // Dependencies
+        null // Version
+    );
+}
+
+add_action( 'init', 'external_style' );
+
+function external_script() {
+	wp_enqueue_script(
+        'bootstrap-js',
+        get_parent_theme_file_uri('styles/bootstrap.min.js'),
+        array(), // Dependencies
+        null, // Version
+        true // In footer
+    );
+
+    wp_enqueue_script(
+        'main-js',
+        get_parent_theme_file_uri('styles/main.js'),
+        array('jquery'), // Dependencies
+        null, // Version
+        true // In footer
+    );
+
+    wp_enqueue_script(
+        'jquery-js',
+        get_parent_theme_file_uri('styles/jquery-3.3.1.min.js'),
+        array(), // Dependencies
+        null, // Version
+        true // In footer
+    );
+
+    wp_enqueue_script(
+        'owl-carousel-js',
+        get_parent_theme_file_uri('styles/owl.carousel.min.js'),
+        array('jquery'), // Dependencies
+        null, // Version
+        true // In footer
+    );
+}
+
+add_action( 'init', 'external_script' );
+
 /**
  * Register pattern categories.
  */

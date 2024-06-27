@@ -218,3 +218,4 @@ function wpcf7_messages() {
 
 	return apply_filters( 'wpcf7_messages', $messages );
 }
+?>
